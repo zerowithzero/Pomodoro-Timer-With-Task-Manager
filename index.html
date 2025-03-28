@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer with Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pomodoro Timer</h1>
+        
+        <div class="timer-container">
+            <div class="timer-display">
+                <span id="minutes">25</span>:<span id="seconds">00</span>
+            </div>
+            <div class="timer-controls">
+                <button id="start-btn"><i class="fas fa-play"></i> Start</button>
+                <button id="pause-btn" disabled><i class="fas fa-pause"></i> Pause</button>
+                <button id="reset-btn"><i class="fas fa-redo"></i> Reset</button>
+            </div>
+            <div class="timer-settings">
+                <div class="setting">
+                    <label for="work-duration">Work (minutes):</label>
+                    <input type="number" id="work-duration" min="1" max="60" value="25">
+                </div>
+                <div class="setting">
+                    <label for="break-duration">Break (minutes):</label>
+                    <input type="number" id="break-duration" min="1" max="30" value="5">
+                </div>
+            </div>
+            <div class="timer-mode">
+                <span id="mode-indicator">Work Session</span>
+            </div>
+        </div>
+        
+        <div class="task-container">
+            <h2>Task List</h2>
+            <div class="task-input">
+                <input type="text" id="task-input" placeholder="Enter a new task...">
+                <button id="add-task-btn"><i class="fas fa-plus"></i> Add</button>
+            </div>
+            <ul id="task-list"></ul>
+            <div class="task-stats">
+                <span id="tasks-completed">0</span> tasks completed
+            </div>
+        </div>
+    </div>
+
+    <audio id="alarm-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-alarm-digital-clock-beep-989.mp3" preload="auto"></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
